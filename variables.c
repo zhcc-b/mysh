@@ -53,7 +53,7 @@ int new_idx(){
 
 void set_bg(pid_t p, char *cmd){
     int i = new_idx();
-    sprintf(buf, "[%d] %d\n", i, p);
+    snprintf(buf, sizeof(buf), "[%d] %d\n", i, p);
     display_message(buf);
     Background *new = malloc(sizeof(Background));
     new->idx = i;
@@ -70,7 +70,7 @@ void check_bg(pid_t pid){
     Background *last = NULL;
     while(curr != NULL){
         if (curr->pid == pid) {
-            sprintf(buf, "[%d]+  Done %s\n", curr->idx, curr->cmd);
+            snprintf(buf, sizeof(buf), "[%d]+  Done %s\n", curr->idx, curr->cmd);
             display_message(buf);
 
 
@@ -91,7 +91,7 @@ void check_bg(pid_t pid){
 void cur_ps(){
     Background *curr = head_bg;
     while(curr != NULL){
-        sprintf(buf, "%s %d\n", curr->cmd, curr->pid);
+        snprintf(buf, sizeof(buf), "%s %d\n", curr->cmd, curr->pid);
         display_message(buf);
         curr = curr->next;
     }

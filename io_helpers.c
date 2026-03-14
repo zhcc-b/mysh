@@ -121,6 +121,7 @@ size_t exe(int token_count, char **token_arr){
 }
 
      void handler(int sig) {
+        (void)sig;
         display_message("\n");
     }
 

@@ -13,6 +13,8 @@
 
 
 int main(int argc, char* argv[]) {
+    (void)argc;
+    (void)argv;
     char *prompt = "mysh$ "; // TODO Step 1, Uncomment this.
 
     char input_buf[MAX_STR_LEN + 1];

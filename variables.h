@@ -1,6 +1,7 @@
 #ifndef __VARIABLES_H__
 #define __VARIABLES_H__
 
+#include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -25,7 +26,7 @@ char *get_value(char *name);
 
 int new_idx();
 void check_bg(pid_t pid);
-void set_bg();
+void set_bg(pid_t p, char *cmd);
 void cur_ps();
 
 

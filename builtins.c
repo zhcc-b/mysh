@@ -146,13 +146,13 @@ ssize_t bn_wc(char **tokens) {
         w = 0;
     }
 
-    sprintf(s, "word count %d\n", word_count);
+    snprintf(s, sizeof(s), "word count %d\n", word_count);
     display_message(s);
 
-    sprintf(s, "character count %d\n", char_count);
+    snprintf(s, sizeof(s), "character count %d\n", char_count);
     display_message(s);
 
-    sprintf(s, "newline count %d\n", newline_count);
+    snprintf(s, sizeof(s), "newline count %d\n", newline_count);
     display_message(s);
 
     if (d == 0){
@@ -311,6 +311,7 @@ ssize_t bn_kill(char **tokens){
 }
 
 ssize_t bn_ps(char **tokens){
+    (void)tokens;
     cur_ps();
     return 0;
 }
